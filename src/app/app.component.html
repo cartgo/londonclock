@@ -1,23 +1,7 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!DOCTYPE html>
 <html>
 <head>
-<!-- <style>
-p {width: 200px;
-  border: 2px solid black;
-  outline:4px solid black;
-  margin: 40px;  
-  padding: 40px;
-  text-align: center;
-}
-</style> -->
+ 
 </head>
 <body>
   <p style = "width: 200px;
@@ -26,15 +10,15 @@ p {width: 200px;
   margin: 40px;  
   padding: 40px;
   text-align: center;">{{Title}} <br> <br>
-<span *ngIf = "htf"  (click) = "[htf = false, pause = true]" >{{hours}}</span>
-<input type="number" [(ngModel)]="hours"   (keydown) = "k($event)" *ngIf = "!htf"  />
+<span *ngIf = "htf"  (click) = "[htf = false, mtf = true, stf = true, pause = true]" >{{hours}}</span>
+<input type="number" #inputhh  [(ngModel)]="hours"   (keydown) = "k($event, inputhh,inputmm=minutes,inputss = seconds)" *ngIf = "!htf"  />
 <!-- <input type="number" [(ngModel)]="hours"   (keydown)="k($event)" *ngIf="true" autofocus/> -->   
 :
-<span *ngIf = "mtf"  (click) = "[mtf = false, pause = true]" >{{minutes}}</span>
-<input type="number" [(ngModel)]="minutes"    (keydown) = "k($event)" *ngIf = "!mtf"  />
+<span *ngIf = "mtf"  (click) = "[mtf = false, htf = true,stf = truepause = true]" >{{minutes}}</span>
+<input type="number" #inputmm  [(ngModel)]="minutes"    (keydown) = "k($event, inputhh = hours,inputmm,inputss = seconds)" *ngIf = "!mtf"  />
 :
-<span *ngIf = "stf"  (click) = "[stf = false, pause = true]" >{{seconds}}</span>
-<input type="number" [(ngModel)]="seconds"   (keydown) = "k($event)" *ngIf = "!stf"  />
+<span *ngIf = "stf"  (click) = "[stf = false, htf = true,mtf = true,pause = true]" >{{seconds}}</span>
+<input type="number" #inputss [(ngModel)]="seconds"   (keydown) = "k($event, inputhh = hours,inputmm=minutes,inputss)" *ngIf = "!stf"  />
 {{ this.am?'AM':'PM' }}
 </p> 
  
@@ -42,13 +26,3 @@ p {width: 200px;
 
 </body>
 </html>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
